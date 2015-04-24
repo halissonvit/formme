@@ -18,3 +18,6 @@
 
 # Ignore IDE files
 .idea/
+
+# Ignoring database.yml
+config/database.yml
