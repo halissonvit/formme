@@ -5,13 +5,13 @@ module Pages
 
       element :email, 'input#user_email'
       element :password, 'input#user_password'
-      element :confirmation_password, 'input#user_confirmation_password'
-      element :sign_up_button, 'button[type="submit"]'
+      element :password_confirmation, 'input#user_password_confirmation'
+      element :sign_up_button, 'input[type="submit"]'
 
-      def sign_up(email, password, confirmation_password = password)
+      def sign_up(email, password, password_confirmation = password)
         self.email.set(email)
         self.password.set(password)
-        self.confirmation_password.set(confirmation_password)
+        self.password_confirmation.set(password_confirmation)
         self.sign_up_button.click
       end
     end
