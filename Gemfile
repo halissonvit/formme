@@ -60,3 +60,8 @@ group :test do
   gem 'capybara-screenshot'
   gem 'site_prism'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
