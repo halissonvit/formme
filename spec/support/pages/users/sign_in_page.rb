@@ -5,7 +5,7 @@ module Pages
 
       element :email, 'input#user_email'
       element :password, 'input#user_password'
-      element :sign_in_button, 'input[type="submit"]'
+      element :sign_in_button, 'button[type="submit"]'
 
       def sign_in(email, password)
         self.email.set(email)

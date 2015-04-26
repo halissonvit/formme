@@ -6,7 +6,7 @@ module Pages
       element :email, 'input#user_email'
       element :password, 'input#user_password'
       element :password_confirmation, 'input#user_password_confirmation'
-      element :sign_up_button, 'input[type="submit"]'
+      element :sign_up_button, 'button[type="submit"]'
 
       def sign_up(email, password, password_confirmation = password)
         self.email.set(email)
