@@ -28,8 +28,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'lodash-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'font-awesome-rails'
 gem 'cocoon'
 
 gem 'devise-i18n'

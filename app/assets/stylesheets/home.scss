@@ -1,0 +1,139 @@
+$darken-percentage: 10%;
+$add_point_color: #337ab7;
+$rescue_bount_color: #42c666;
+$people_liked_color: #ff6269;
+
+body {
+  background: #fff;
+}
+
+.panel {
+  padding: 15px;
+  box-shadow: none;
+}
+
+.panel .row {
+  padding: 10px;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding: 5px;
+  display: block;
+}
+
+#shortcuts, #statistics {
+  text-align: center;
+
+  h2 {
+    margin: 10px;
+  }
+}
+
+.shortcut a, .statistic a {
+  display: block;
+  width: 100%;;
+  height: 100%;;
+}
+
+.shortcut {
+  h3 {
+    font-size: 20px;
+  }
+
+  &:hover {
+    .icon {
+      transition: all 0.4s ease-in-out;
+      padding-top: 0px;
+    }
+
+    h3 {
+      transition: all 0.4s ease-in-out;
+      padding-top: 5px;
+    }
+  }
+}
+
+#add_point.shortcut {
+  .icon {
+    color: $add_point_color;
+  }
+
+  h3 {
+    color: $add_point_color;
+  }
+
+  &:hover {
+    $color: darken($add_point_color, $darken-percentage);
+
+    .icon {
+      color: $color;
+    }
+
+    h3 {
+      color: $color;
+    }
+  }
+}
+
+#rescue_bount.shortcut, #create_campaign {
+  .icon {
+    color: $rescue_bount_color;
+  }
+
+  h3 {
+    color: $rescue_bount_color;
+  }
+
+  &:hover {
+    $color: darken($rescue_bount_color, $darken-percentage);
+
+    .icon {
+      color: $color;
+    }
+
+    h3 {
+      color: $color;
+    }
+  }
+}
+
+.statistic {
+  .icon {
+    background-color: #fff;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.statistic {
+  .icon, h3, p {
+    color: $people_liked_color;
+  }
+
+  &:hover {
+    $color: darken($people_liked_color, $darken-percentage);
+
+    .icon {
+      padding-top: 5px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .icon, h3, p {
+      color: $color;
+    }
+  }
+}
+
+.statistic:hover {
+
+  .icon, h3, p {
+    //    @include darken($darken-percentage)
+  }
+}
+
+.data-template {
+  display: none;
+}

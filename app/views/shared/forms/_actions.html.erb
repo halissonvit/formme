@@ -1,0 +1,9 @@
+<% text = nil if local_assigns[:text].nil? %>
+<% extra_class = '' if local_assigns[:extra_class].nil? %>
+<% model = local_assigns[:object].nil? ? '' : object.class.model_name.human %>
+
+<div class='actions'>
+  <%= f.button type: :submit, class: "btn btn-theme submit #{extra_class}" do %>
+      <%= text ? text : t('helpers.submit.submit', model: model) %>
+  <% end %>
+</div>

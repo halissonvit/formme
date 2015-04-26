@@ -1,0 +1,4 @@
+pt-BR:
+  forms:
+    add: "Adicionar %{model}"
+    remove: "Remover %{model}"

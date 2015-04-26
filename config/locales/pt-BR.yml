@@ -1,0 +1,21 @@
+pt-BR:
+  #models
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      user:
+        name: Nome
+        email: E-mail
+
+  #views
+  layouts:
+    navigation:
+      current_user:
+        profile: Perfil
+        account: Minha conta
+
+  home:
+    welcome: Welcome
