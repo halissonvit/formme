@@ -1,16 +1,15 @@
 module Pages
   module Users
     class SignInPage < SitePrism::Page
-      set_url '/users/sign_in'
+      set_url '/users/edit'
 
       element :email, 'input#user_email'
+      element :current_password, 'input#user_current_password'
       element :password, 'input#user_password'
-      element :sign_in_button, 'button[type="submit"]'
+      element :password_confirmation, 'input#user_password_confirmation'
+      element :update_button, 'button[type="submit"]'
 
       def sign_in(email, password)
-        self.wait_for_email
-        self.wait_for_password
-
         self.email.set(email)
         self.password.set(password)
 
