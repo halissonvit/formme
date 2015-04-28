@@ -1,6 +1,6 @@
 require 'acceptance_spec_helper'
 
-feature 'Visitors Sign Up' do
+feature 'Visitors Sign Up', js: true  do
   let(:sign_up_page) { Pages::Users::SignUpPage.new }
 
   scenario 'with valid email and password' do

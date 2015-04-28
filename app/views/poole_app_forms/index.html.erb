@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Poole App Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poole_app_forms.each do |poole_app_form| %>
+      <tr>
+        <td><%= poole_app_form.title %></td>
+        <td><%= poole_app_form.user %></td>
+        <td><%= link_to 'Show', poole_app_form %></td>
+        <td><%= link_to 'Edit', edit_poole_app_form_path(poole_app_form) %></td>
+        <td><%= link_to 'Destroy', poole_app_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poole app form', new_poole_app_form_path %>
