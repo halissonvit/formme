@@ -6,7 +6,7 @@ feature 'Visitors Sign Up', js: true  do
   scenario 'with valid email and password' do
     sign_up_page.load
 
-    sign_up_page.sign_up('user@email.com', 'password', 'password')
+    sign_up_page.sign_up(Faker::Internet.email, 'password', 'password')
 
     expect(page).to have_content 'Welcome'
   end

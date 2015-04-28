@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20150428030543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+  enable_extension "uuid-ossp"
 
   create_table "poole_app_forms", force: :cascade do |t|
     t.string   "title"
