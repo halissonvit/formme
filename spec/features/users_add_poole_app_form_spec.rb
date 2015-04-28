@@ -17,6 +17,7 @@ feature 'Users Add PooleApp Form', js: true do
 
     expect(new_poole_form_page).to be_displayed
 
+    # TODO: create a new form 
     expect(page).to have_field 'poole_app_form_api_secret'
     expect(page).to have_field 'poole_app_form_api_key'
   end
