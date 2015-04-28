@@ -1,10 +1,11 @@
 class PooleAppFormsController < ApplicationController
   before_action :set_poole_app_form, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   # GET /poole_app_forms
   # GET /poole_app_forms.json
   def index
-    @poole_app_forms = PooleAppForm.all
+    @poole_app_forms = current_user.poole_app_forms.all
   end
 
   # GET /poole_app_forms/1
@@ -64,11 +65,22 @@ class PooleAppFormsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_poole_app_form
-    @poole_app_form = PooleAppForm.find(params[:id])
+    @poole_app_form = current_user.poole_app_forms.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def poole_app_form_params
     params.require(:poole_app_form).permit(:title, :api_key, :api_secret)
+  end
+
+  def not_found
+    # message = "PooleAppForm with ID #{params[:id]} not found."
+    # logger.error message
+    # redirect_to not_found_url, info: message
+    respond_to do |format|
+      format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+      format.xml  { head :not_found }
+      format.any  { head :not_found }
+    end
   end
 end
