@@ -19,3 +19,8 @@ I have 3 main features in mind:
 - Allow the creation of forms independently of third party services
 
 - Migrate the front-end of the app to use AngularJS, or other similar technology
+
+## Relevant links
+
+* [CI](https://semaphoreci.com/halissonvit/formme)
+* [App](https://formme.herokuapp.com/)
