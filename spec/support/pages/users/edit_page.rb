@@ -1,6 +1,6 @@
 module Pages
   module Users
-    class SignInPage < SitePrism::Page
+    class EditPage < SitePrism::Page
       set_url '/users/edit'
 
       element :email, 'input#user_email'
