@@ -1,7 +1,7 @@
 require 'acceptance_spec_helper'
 
 feature 'Users Add PooleApp Form', js: true do
-  let(:user) { build(:user) }
+  let!(:user) { build(:user) }
   let(:sign_up_page) { Pages::Users::SignUpPage.new }
   let(:sign_in_page) { Pages::Users::SignInPage.new }
   let(:home_page) { Pages::HomePage.new }
@@ -14,11 +14,10 @@ feature 'Users Add PooleApp Form', js: true do
     home_page.menu.wait_for_new_poole_form
 
     home_page.menu.new_poole_form.click
-
     expect(new_poole_form_page).to be_displayed
 
-    # TODO: create a new form 
-    expect(page).to have_field 'poole_app_form_api_secret'
-    expect(page).to have_field 'poole_app_form_api_key'
+    new_poole_form_page.create_form('title', 'api_key', 'api_secret')
+
+    expect(page).to have_content 'Poole app form was successfully created.'
   end
 end
