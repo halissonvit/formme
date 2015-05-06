@@ -3,6 +3,6 @@ FactoryGirl.define do
     title { Faker::Lorem.sentence(3) }
     api_key 'api_key'
     api_secret 'api_secret'
-    user
+    user { create(:user) }
   end
 end
