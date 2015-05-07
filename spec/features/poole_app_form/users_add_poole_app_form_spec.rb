@@ -1,14 +1,12 @@
 require 'acceptance_spec_helper'
 
 feature 'Users Add PooleApp Form', js: true do
-  let!(:user) { build(:user) }
-  let(:sign_up_page) { Pages::Users::SignUpPage.new }
-  let(:sign_in_page) { Pages::Users::SignInPage.new }
+  let!(:user) { create(:user) }
   let(:home_page) { Pages::HomePage.new }
   let(:new_poole_form_page) { Pages::PooleAppForms::NewPage.new }
 
   scenario 'with valid integration key' do
-    sign_up_user(user)
+    sign_in_user(user)
 
     home_page.menu.forms.click
     home_page.menu.wait_for_new_poole_form
